@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Autohaus | Car Dealership</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Prime Autohaus home">
+        <span class="brand-mark">PA</span>
+        <span>Prime Autohaus</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#inventory">Inventory</a>
+        <a href="#services">Services</a>
+        <a href="#finance">Finance</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-media" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80" alt="">
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Trusted car dealership</p>
+        <h1>Find a car that fits your life, not just your budget.</h1>
+        <p class="hero-copy">Browse inspected vehicles, compare prices clearly, and book a test drive without pressure.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#inventory">View Inventory</a>
+          <a class="button secondary" href="#contact">Book Test Drive</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-search" aria-label="Quick vehicle search">
+      <div class="search-panel">
+        <label>
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Model, brand, or type">
+        </label>
+        <label>
+          <span>Type</span>
+          <select id="typeFilter">
+            <option value="all">All types</option>
+            <option value="Sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="Electric">Electric</option>
+            <option value="Hatchback">Hatchback</option>
+          </select>
+        </label>
+        <label>
+          <span>Max price</span>
+          <select id="priceFilter">
+            <option value="all">Any price</option>
+            <option value="25000">Under $25,000</option>
+            <option value="35000">Under $35,000</option>
+            <option value="50000">Under $50,000</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="section" id="inventory">
+      <div class="section-heading">
+        <p class="eyebrow">Available now</p>
+        <h2>Featured Inventory</h2>
+        <p>Clean history, fair pricing, and detailed inspections on every vehicle.</p>
+      </div>
+      <div class="inventory-grid" id="inventoryGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No vehicles match your filters. Try adjusting the search.</p>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">What we handle</p>
+        <h2>Simple ownership support</h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-item">
+          <span>01</span>
+          <h3>Certified inspection</h3>
+          <p>Each car is checked for safety, performance, documents, and service history before listing.</p>
+        </article>
+        <article class="service-item">
+          <span>02</span>
+          <h3>Trade-in valuation</h3>
+          <p>Get a practical value estimate and use it toward your next vehicle purchase.</p>
+        </article>
+        <article class="service-item">
+          <span>03</span>
+          <h3>Flexible finance</h3>
+          <p>Compare plans with clear monthly estimates and no hidden dealership language.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="finance-band" id="finance">
+      <div>
+        <p class="eyebrow">Finance estimate</p>
+        <h2>Plan your monthly payment</h2>
+        <p>Use this quick estimate before speaking with our finance team.</p>
+      </div>
+      <form class="finance-form" id="financeForm">
+        <label>
+          <span>Vehicle price</span>
+          <input id="loanAmount" type="number" min="1000" value="28000">
+        </label>
+        <label>
+          <span>Down payment</span>
+          <input id="downPayment" type="number" min="0" value="4000">
+        </label>
+        <label>
+          <span>Term</span>
+          <select id="loanTerm">
+            <option value="36">36 months</option>
+            <option value="48">48 months</option>
+            <option value="60" selected>60 months</option>
+          </select>
+        </label>
+        <button class="button primary" type="submit">Calculate</button>
+        <output id="paymentResult">Estimated monthly payment: $440</output>
+      </form>
+    </section>
+
+    <section class="section testimonials">
+      <div class="testimonial-copy">
+        <p class="eyebrow">Customer note</p>
+        <h2>“Clear price, clean paperwork, and the test drive was booked in minutes.”</h2>
+        <p>Riya Sharma, Prime Autohaus customer</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1200&q=80" alt="Silver sports car parked on a road">
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Visit us</p>
+        <h2>Ready for a test drive?</h2>
+        <p>Send your details and our showroom team will confirm the slot.</p>
+        <ul>
+          <li>Mon-Sat, 9:00 AM to 7:00 PM</li>
+          <li>12 Park Avenue, Downtown</li>
+          <li>+1 555 014 8832</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          <span>Vehicle interest</span>
+          <input type="text" name="vehicle" placeholder="Honda Accord, Tesla Model 3...">
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Preferred date or questions"></textarea>
+        </label>
+        <button class="button primary" type="submit">Send Request</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Prime Autohaus. All rights reserved.</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
