@@ -46,6 +46,7 @@ car-delarship/
 - Automatic homepage car image slideshow
 - Featured vehicle inventory
 - Separate car details page with gallery, specifications, features, and contact information
+- Car comparison feature for comparing two or more cars side by side
 - Search by make, model, year, and price range
 - Dropdown and input filters for make, type, year, min price, and max price
 - Finance payment estimator

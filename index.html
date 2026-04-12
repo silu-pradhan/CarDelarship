@@ -203,6 +203,27 @@
     </section>
   </main>
 
+  <div class="compare-bar" id="compareBar" hidden>
+    <p><strong id="compareCount">0</strong> cars selected for comparison</p>
+    <div class="compare-actions">
+      <button class="button primary" type="button" id="openCompareButton">Compare Cars</button>
+      <button class="button secondary dark" type="button" id="clearCompareButton">Clear</button>
+    </div>
+  </div>
+
+  <div class="modal compare-modal" id="compareModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-compare></div>
+    <section class="compare-panel" role="dialog" aria-modal="true" aria-labelledby="compareTitle">
+      <button class="modal-close" type="button" aria-label="Close comparison" data-close-compare>&times;</button>
+      <div class="compare-header">
+        <p class="eyebrow">Car comparison</p>
+        <h2 id="compareTitle">Compare selected cars</h2>
+        <p>Review important details side by side before opening the full car page.</p>
+      </div>
+      <div class="compare-table-wrap" id="compareTableWrap"></div>
+    </section>
+  </div>
+
   <footer class="footer">
     <p>&copy; 2026 Prime Autohaus. All rights reserved.</p>
     <a href="#home">Back to top</a>

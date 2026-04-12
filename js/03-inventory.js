@@ -1,4 +1,8 @@
+const selectedCompareIds = new Set();
+
 function vehicleCard(vehicle) {
+  const isSelected = selectedCompareIds.has(vehicle.id);
+
   return `
     <article class="vehicle-card" data-car-id="${vehicle.id}" tabindex="0">
       <div class="vehicle-image-wrap">
@@ -23,6 +27,9 @@ function vehicleCard(vehicle) {
           <a class="button primary" href="details.html?id=${vehicle.id}">View Details</a>
           <a class="button secondary" href="#finance">Estimate</a>
         </div>
+        <button class="compare-toggle ${isSelected ? "selected" : ""}" type="button" data-compare-id="${vehicle.id}">
+          ${isSelected ? "Added to Compare" : "Add to Compare"}
+        </button>
       </div>
     </article>
   `;
@@ -55,6 +62,88 @@ function openCarDetails(carId) {
   window.location.href = `details.html?id=${carId}`;
 }
 
+function updateCompareBar() {
+  compareCount.textContent = selectedCompareIds.size;
+  compareBar.hidden = selectedCompareIds.size === 0;
+  openCompareButton.disabled = selectedCompareIds.size < 2;
+}
+
+function toggleCompare(carId) {
+  if (selectedCompareIds.has(carId)) {
+    selectedCompareIds.delete(carId);
+  } else {
+    selectedCompareIds.add(carId);
+  }
+
+  renderVehicles();
+  updateCompareBar();
+}
+
+function compareCell(label, values) {
+  return `
+    <tr>
+      <th scope="row">${label}</th>
+      ${values.map((value) => `<td>${value}</td>`).join("")}
+    </tr>
+  `;
+}
+
+function renderCompareTable() {
+  const selectedCars = vehicles.filter((vehicle) => selectedCompareIds.has(vehicle.id));
+
+  compareTableWrap.innerHTML = `
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th scope="col">Details</th>
+          ${selectedCars.map((vehicle) => `
+            <th scope="col">
+              <img src="${vehicle.image}" alt="${vehicle.year} ${vehicle.make} ${vehicle.model}">
+              <span>${vehicle.year} ${vehicle.make} ${vehicle.model}</span>
+            </th>
+          `).join("")}
+        </tr>
+      </thead>
+      <tbody>
+        ${compareCell("Price", selectedCars.map((vehicle) => money.format(vehicle.price)))}
+        ${compareCell("Type", selectedCars.map((vehicle) => vehicle.type))}
+        ${compareCell("Mileage", selectedCars.map((vehicle) => vehicle.mileage))}
+        ${compareCell("Fuel", selectedCars.map((vehicle) => vehicle.fuel))}
+        ${compareCell("Transmission", selectedCars.map((vehicle) => vehicle.transmission))}
+        ${compareCell("Engine", selectedCars.map((vehicle) => vehicle.engine))}
+        ${compareCell("Color", selectedCars.map((vehicle) => vehicle.color))}
+        ${compareCell("Seats", selectedCars.map((vehicle) => vehicle.seats))}
+        ${compareCell("Features", selectedCars.map((vehicle) => vehicle.features.join(", ")))}
+        ${compareCell("Full Page", selectedCars.map((vehicle) => `<a href="details.html?id=${vehicle.id}">Open details</a>`))}
+      </tbody>
+    </table>
+  `;
+}
+
+function openCompareModal() {
+  if (selectedCompareIds.size < 2) {
+    return;
+  }
+
+  renderCompareTable();
+  compareModal.classList.add("open");
+  compareModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeCompareModal() {
+  compareModal.classList.remove("open");
+  compareModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+function clearComparison() {
+  selectedCompareIds.clear();
+  renderVehicles();
+  updateCompareBar();
+  closeCompareModal();
+}
+
 function setupInventoryFilters() {
   [searchInput, makeFilter, typeFilter, yearFilter, minPriceFilter, maxPriceFilter].forEach((field) => {
     field.addEventListener("input", renderVehicles);
@@ -63,8 +152,14 @@ function setupInventoryFilters() {
 
 function setupCarDetails() {
   inventoryGrid.addEventListener("click", (event) => {
+    const compareButton = event.target.closest("[data-compare-id]");
     const actionLink = event.target.closest("a");
     const card = event.target.closest("[data-car-id]");
+
+    if (compareButton) {
+      toggleCompare(compareButton.dataset.compareId);
+      return;
+    }
 
     if (actionLink || !card) {
       return;
@@ -83,4 +178,23 @@ function setupCarDetails() {
       openCarDetails(card.dataset.carId);
     }
   });
+}
+
+function setupComparison() {
+  openCompareButton.addEventListener("click", openCompareModal);
+  clearCompareButton.addEventListener("click", clearComparison);
+
+  compareModal.addEventListener("click", (event) => {
+    if (event.target.closest("[data-close-compare]")) {
+      closeCompareModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && compareModal.classList.contains("open")) {
+      closeCompareModal();
+    }
+  });
+
+  updateCompareBar();
 }
