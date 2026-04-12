@@ -12,8 +12,16 @@ car-delarship/
   css/
     01-base.css
     02-layout.css
-    03-components.css
-    04-responsive.css
+    03-header.css
+    04-buttons.css
+    05-hero.css
+    06-search.css
+    07-inventory.css
+    08-sections.css
+    09-forms.css
+    10-details.css
+    11-compare.css
+    12-responsive.css
   js/
     01-vehicles-data.js
     02-dom-elements.js
@@ -43,7 +51,9 @@ car-delarship/
 ## Features
 
 - Professional homepage with full-width automotive hero image
+- Homepage banner with dealership name and tagline
 - Automatic homepage car image slideshow
+- Clear navigation for search, car listings, about us, services, and contact
 - Featured vehicle inventory
 - Separate car details page with gallery, specifications, features, and contact information
 - Car comparison feature for comparing two or more cars side by side

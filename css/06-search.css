@@ -1,0 +1,9 @@
+.search-panel {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(5, 1fr);
+  gap: 16px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}

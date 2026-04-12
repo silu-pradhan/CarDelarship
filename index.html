@@ -6,8 +6,16 @@
   <title>Prime Autohaus | Car Dealership</title>
   <link rel="stylesheet" href="css/01-base.css">
   <link rel="stylesheet" href="css/02-layout.css">
-  <link rel="stylesheet" href="css/03-components.css">
-  <link rel="stylesheet" href="css/04-responsive.css">
+  <link rel="stylesheet" href="css/03-header.css">
+  <link rel="stylesheet" href="css/04-buttons.css">
+  <link rel="stylesheet" href="css/05-hero.css">
+  <link rel="stylesheet" href="css/06-search.css">
+  <link rel="stylesheet" href="css/07-inventory.css">
+  <link rel="stylesheet" href="css/08-sections.css">
+  <link rel="stylesheet" href="css/09-forms.css">
+  <link rel="stylesheet" href="css/10-details.css">
+  <link rel="stylesheet" href="css/11-compare.css">
+  <link rel="stylesheet" href="css/12-responsive.css">
 </head>
 <body>
   <header class="site-header">
@@ -22,9 +30,10 @@
         <span></span>
       </button>
       <div class="nav-links" id="navLinks">
-        <a href="#inventory">Inventory</a>
+        <a href="#search">Search</a>
+        <a href="#inventory">Car Listings</a>
+        <a href="#about">About Us</a>
         <a href="#services">Services</a>
-        <a href="#finance">Finance</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -36,17 +45,25 @@
         <img id="heroImage" src="assets/images/hero-luxury-car.jpg" alt="">
       </div>
       <div class="hero-content">
-        <p class="eyebrow">Trusted car dealership</p>
-        <h1>Find a car that fits your life, not just your budget.</h1>
-        <p class="hero-copy">Browse inspected vehicles, compare prices clearly, and book a test drive without pressure.</p>
+        <div class="hero-banner">
+          <p class="eyebrow">Prime Autohaus</p>
+          <h1>Drive home with confidence.</h1>
+          <p class="hero-tagline">Premium inspected cars, clear prices, and a showroom team that keeps the buying process simple.</p>
+        </div>
         <div class="hero-actions">
           <a class="button primary" href="#inventory">View Inventory</a>
-          <a class="button secondary" href="#contact">Book Test Drive</a>
+          <a class="button secondary" href="#search">Search Cars</a>
+        </div>
+        <div class="carousel-status" aria-label="Featured car carousel">
+          <span class="carousel-label">Featured cars</span>
+          <span class="carousel-dot active" data-slide-dot="0"></span>
+          <span class="carousel-dot" data-slide-dot="1"></span>
+          <span class="carousel-dot" data-slide-dot="2"></span>
         </div>
       </div>
     </section>
 
-    <section class="quick-search" aria-label="Quick vehicle search">
+    <section class="quick-search" id="search" aria-label="Quick vehicle search">
       <div class="search-panel">
         <label>
           <span>Search</span>
@@ -95,6 +112,28 @@
           <span>Max price</span>
           <input id="maxPriceFilter" type="number" min="0" step="1000" placeholder="$70,000">
         </label>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">About us</p>
+        <h2>A cleaner way to choose your next car</h2>
+        <p>Prime Autohaus focuses on inspected vehicles, transparent pricing, practical financing support, and helpful test-drive guidance.</p>
+      </div>
+      <div class="about-grid">
+        <article>
+          <strong>120+</strong>
+          <span>cars inspected monthly</span>
+        </article>
+        <article>
+          <strong>4.8/5</strong>
+          <span>average customer rating</span>
+        </article>
+        <article>
+          <strong>7 days</strong>
+          <span>purchase support window</span>
+        </article>
       </div>
     </section>
 

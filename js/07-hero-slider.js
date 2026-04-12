@@ -6,6 +6,7 @@ const heroSlides = [
 
 function setupHeroSlider() {
   const heroImage = document.querySelector("#heroImage");
+  const slideDots = document.querySelectorAll("[data-slide-dot]");
   let activeSlide = 0;
 
   setInterval(() => {
@@ -14,6 +15,9 @@ function setupHeroSlider() {
 
     setTimeout(() => {
       heroImage.src = heroSlides[activeSlide];
+      slideDots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeSlide);
+      });
       heroImage.classList.remove("is-changing");
     }, 350);
   }, 3200);

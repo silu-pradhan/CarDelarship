@@ -1,0 +1,57 @@
+.finance-band p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.finance-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.finance-form label,
+.finance-form output {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.finance-form button,
+.finance-form output {
+  grid-column: span 3;
+}
+
+.finance-form output {
+  min-height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  font-weight: 700;
+}
+
+.contact-copy p,
+.contact-copy li,
+.form-note {
+  color: var(--muted);
+}
+
+.contact-copy ul {
+  display: grid;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding-left: 18px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 15px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: var(--surface);
+}
+
+.form-note {
+  margin: 0;
+  min-height: 24px;
+}

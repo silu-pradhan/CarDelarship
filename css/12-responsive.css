@@ -17,16 +17,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .modal-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-panel > img {
-    min-height: 300px;
-    max-height: 360px;
-    height: auto;
-  }
-
   .details-hero,
   .details-section,
   .details-contact {
@@ -99,6 +89,7 @@
 
   .search-panel,
   .inventory-grid,
+  .about-grid,
   .service-grid,
   .finance-band,
   .testimonials,
@@ -164,7 +155,8 @@
 
   .search-panel,
   .detail-grid.wide,
-  .details-thumbs {
+  .details-thumbs,
+  .about-grid {
     grid-template-columns: 1fr;
   }
 
@@ -175,22 +167,6 @@
 
   .modal {
     padding: 12px;
-  }
-
-  .modal-content {
-    padding: 22px;
-  }
-
-  .modal-panel > img {
-    min-height: 230px;
-    max-height: 260px;
-    padding: 10px;
-  }
-
-  .detail-grid,
-  .modal-actions {
-    grid-template-columns: 1fr;
-    flex-direction: column;
   }
 
   .compare-bar {
