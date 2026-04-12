@@ -1,0 +1,96 @@
+@media (max-width: 860px) {
+  .nav {
+    min-height: 66px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 66px;
+    left: 16px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+
+  .hero {
+    min-height: 690px;
+  }
+
+  .hero::after {
+    background: rgba(0, 0, 0, 0.63);
+  }
+
+  .hero-content {
+    padding: 74px 0 118px;
+  }
+
+  .search-panel,
+  .inventory-grid,
+  .service-grid,
+  .finance-band,
+  .testimonials,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-form {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-form button,
+  .finance-form output {
+    grid-column: span 1;
+  }
+
+  .section,
+  .contact-section {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-actions,
+  .card-actions,
+  .footer {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .search-panel {
+    padding: 16px;
+  }
+
+  .vehicle-top {
+    display: grid;
+  }
+
+  .price {
+    white-space: normal;
+  }
+}
