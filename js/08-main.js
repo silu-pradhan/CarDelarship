@@ -1,4 +1,5 @@
 setupNavigation();
+setupHeroSlider();
 setupInventoryFilters();
 setupFinanceForm();
 setupContactForm();

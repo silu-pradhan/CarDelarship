@@ -20,12 +20,24 @@ car-delarship/
     04-finance.js
     05-navigation.js
     06-contact.js
-    07-main.js
+    07-hero-slider.js
+    08-main.js
+  assets/
+    images/
+      hero-luxury-car.jpg
+      hero-sports-car.jpg
+      hero-electric-car.jpg
+      vehicle-sedan.jpg
+      vehicle-suv.jpg
+      vehicle-electric.jpg
+      vehicle-coupe.jpg
+      showroom-car.jpg
 ```
 
 ## Features
 
 - Professional homepage with full-width automotive hero image
+- Automatic homepage car image slideshow
 - Featured vehicle inventory
 - Search, type filter, and max-price filter
 - Finance payment estimator

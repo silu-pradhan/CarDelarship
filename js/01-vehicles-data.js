@@ -7,7 +7,7 @@ const vehicles = [
     price: 28500,
     mileage: "18k mi",
     fuel: "Hybrid",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/vehicle-sedan.jpg",
     description: "Balanced comfort, strong fuel economy, and a quiet cabin for daily driving."
   },
   {
@@ -18,7 +18,7 @@ const vehicles = [
     price: 31900,
     mileage: "24k mi",
     fuel: "Petrol",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/vehicle-suv.jpg",
     description: "Practical SUV with generous cargo space and a dependable service record."
   },
   {
@@ -29,7 +29,7 @@ const vehicles = [
     price: 38900,
     mileage: "14k mi",
     fuel: "Electric",
-    image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/vehicle-electric.jpg",
     description: "Clean electric performance with modern driver assistance and fast charging."
   },
   {
@@ -40,7 +40,7 @@ const vehicles = [
     price: 42750,
     mileage: "31k mi",
     fuel: "Petrol",
-    image: "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/vehicle-suv.jpg",
     description: "Premium compact SUV with confident handling and a refined interior."
   },
   {
@@ -51,7 +51,7 @@ const vehicles = [
     price: 18950,
     mileage: "20k mi",
     fuel: "Petrol",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/vehicle-coupe.jpg",
     description: "Efficient city car with smart features, easy parking, and low running cost."
   },
   {
@@ -62,7 +62,7 @@ const vehicles = [
     price: 46500,
     mileage: "22k mi",
     fuel: "Petrol",
-    image: "https://images.unsplash.com/photo-1617814076668-8dfc6fe9ecfc?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/vehicle-sedan.jpg",
     description: "Executive sedan with premium materials, smooth ride quality, and elegant design."
   }
 ];
