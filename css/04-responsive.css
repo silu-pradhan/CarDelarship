@@ -16,6 +16,7 @@
   .modal-panel > img {
     min-height: 300px;
     max-height: 360px;
+    height: auto;
   }
 }
 
@@ -139,6 +140,7 @@
   .modal-panel > img {
     min-height: 230px;
     max-height: 260px;
+    padding: 10px;
   }
 
   .detail-grid,
