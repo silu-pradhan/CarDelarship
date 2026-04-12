@@ -2,6 +2,14 @@
   .inventory-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .search-panel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .detail-grid.wide {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 980px) {
@@ -17,6 +25,12 @@
     min-height: 300px;
     max-height: 360px;
     height: auto;
+  }
+
+  .details-hero,
+  .details-section,
+  .details-contact {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -48,9 +62,23 @@
     display: flex;
   }
 
+  .nav-links.static {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
   .nav-links a {
     padding: 14px 16px;
     border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.static a {
+    padding: 0;
+    border-bottom: 0;
   }
 
   .nav-links a:last-child {
@@ -78,6 +106,10 @@
     grid-template-columns: 1fr;
   }
 
+  .search-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .finance-form {
     grid-template-columns: 1fr;
   }
@@ -96,6 +128,7 @@
 @media (max-width: 540px) {
   .hero-actions,
   .card-actions,
+  .details-actions,
   .footer {
     flex-direction: column;
   }
@@ -127,6 +160,17 @@
 
   .inventory-grid {
     grid-template-columns: 1fr;
+  }
+
+  .search-panel,
+  .detail-grid.wide,
+  .details-thumbs {
+    grid-template-columns: 1fr;
+  }
+
+  .details-summary,
+  .details-contact {
+    padding: 22px;
   }
 
   .modal {

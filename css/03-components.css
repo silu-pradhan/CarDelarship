@@ -22,6 +22,10 @@
   color: var(--ink);
 }
 
+.nav-links.static {
+  display: flex;
+}
+
 .nav-toggle {
   display: none;
   width: 42px;
@@ -102,7 +106,7 @@
 
 .search-panel {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.3fr repeat(5, 1fr);
   gap: 16px;
   padding: 20px;
   border-radius: 8px;
@@ -451,4 +455,112 @@
   color: var(--ink);
   border-color: var(--line);
   background: var(--surface);
+}
+
+.back-link {
+  display: inline-flex;
+  margin-bottom: 24px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.details-gallery {
+  display: grid;
+  gap: 14px;
+}
+
+.details-main-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #e8ecef;
+}
+
+.details-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.thumb-button {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  background: #e8ecef;
+  cursor: pointer;
+}
+
+.thumb-button.active {
+  border-color: var(--accent);
+}
+
+.thumb-button img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.details-summary {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  background: var(--surface);
+}
+
+.details-summary h1 {
+  font-size: clamp(2.1rem, 4vw, 3.8rem);
+}
+
+.details-price {
+  margin: 18px 0;
+  color: var(--accent);
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.details-summary p:not(.eyebrow):not(.details-price),
+.details-contact p,
+.details-contact li {
+  color: var(--muted);
+}
+
+.details-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.detail-grid.wide {
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0;
+}
+
+.feature-list.large span {
+  padding: 10px 13px;
+}
+
+.details-contact {
+  border-radius: 8px;
+  padding: 34px;
+  color: #fff;
+  background: #20201d;
+}
+
+.details-contact .eyebrow {
+  color: var(--warm);
+}
+
+.details-contact p,
+.details-contact li {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.details-contact ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
 }

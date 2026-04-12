@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Details | Prime Autohaus</title>
+  <link rel="stylesheet" href="css/01-base.css">
+  <link rel="stylesheet" href="css/02-layout.css">
+  <link rel="stylesheet" href="css/03-components.css">
+  <link rel="stylesheet" href="css/04-responsive.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Prime Autohaus home">
+        <span class="brand-mark">PA</span>
+        <span>Prime Autohaus</span>
+      </a>
+      <div class="nav-links static">
+        <a href="index.html#inventory">Inventory</a>
+        <a href="index.html#finance">Finance</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="details-page">
+    <a class="back-link" href="index.html#inventory">Back to inventory</a>
+
+    <section class="details-hero" id="detailsRoot">
+      <div class="details-gallery">
+        <img class="details-main-image" id="detailsMainImage" src="assets/images/vehicle-sedan.jpg" alt="">
+        <div class="details-thumbs" id="detailsThumbs"></div>
+      </div>
+
+      <div class="details-summary">
+        <p class="eyebrow" id="detailsType">Vehicle</p>
+        <h1 id="detailsTitle">Car Details</h1>
+        <p class="details-price" id="detailsPrice">$0</p>
+        <p id="detailsDescription"></p>
+        <div class="details-actions">
+          <a class="button primary" href="index.html#contact">Contact Dealer</a>
+          <a class="button secondary dark" href="index.html#finance">Estimate Payment</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="details-section">
+      <div>
+        <p class="eyebrow">Specifications</p>
+        <h2>Vehicle information</h2>
+      </div>
+      <dl class="detail-grid wide" id="detailsSpecs"></dl>
+    </section>
+
+    <section class="details-section">
+      <div>
+        <p class="eyebrow">Features</p>
+        <h2>Included highlights</h2>
+      </div>
+      <div class="feature-list large" id="detailsFeatures"></div>
+    </section>
+
+    <section class="details-contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Ask about this car</h2>
+        <p>Prime Autohaus showroom team can help with test drives, paperwork, finance, and purchase inquiries.</p>
+      </div>
+      <ul>
+        <li><strong>Phone:</strong> +1 555 014 8832</li>
+        <li><strong>Email:</strong> sales@primeautohaus.example</li>
+        <li><strong>Address:</strong> 12 Park Avenue, Downtown</li>
+        <li><strong>Hours:</strong> Mon-Sat, 9:00 AM to 7:00 PM</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Prime Autohaus. All rights reserved.</p>
+    <a href="index.html">Home</a>
+  </footer>
+
+  <script src="js/01-vehicles-data.js"></script>
+  <script src="js/09-details-page.js"></script>
+</body>
+</html>

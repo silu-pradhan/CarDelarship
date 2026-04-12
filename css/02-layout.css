@@ -135,3 +135,25 @@
   border-top: 1px solid var(--line);
   color: var(--muted);
 }
+
+.details-page {
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 34px 0 96px;
+}
+
+.details-hero,
+.details-section,
+.details-contact {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.details-section,
+.details-contact {
+  margin-top: 58px;
+  padding-top: 42px;
+  border-top: 1px solid var(--line);
+}

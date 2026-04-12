@@ -7,6 +7,7 @@ A clean, responsive car dealership website built with HTML, CSS, and JavaScript.
 ```text
 car-delarship/
   index.html
+  details.html
   README.md
   css/
     01-base.css
@@ -22,6 +23,7 @@ car-delarship/
     06-contact.js
     07-hero-slider.js
     08-main.js
+    09-details-page.js
   assets/
     images/
       hero-luxury-car.jpg
@@ -31,6 +33,10 @@ car-delarship/
       vehicle-suv.jpg
       vehicle-electric.jpg
       vehicle-coupe.jpg
+      vehicle-bmw-suv.jpg
+      vehicle-hatchback.jpg
+      vehicle-luxury-sedan.jpg
+      vehicle-muscle.jpg
       showroom-car.jpg
 ```
 
@@ -39,8 +45,9 @@ car-delarship/
 - Professional homepage with full-width automotive hero image
 - Automatic homepage car image slideshow
 - Featured vehicle inventory
-- Clickable car cards with full vehicle details
-- Search, type filter, and max-price filter
+- Separate car details page with gallery, specifications, features, and contact information
+- Search by make, model, year, and price range
+- Dropdown and input filters for make, type, year, min price, and max price
 - Finance payment estimator
 - Services section
 - Customer note section

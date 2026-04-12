@@ -20,7 +20,7 @@ function vehicleCard(vehicle) {
         </ul>
         <p>${vehicle.description}</p>
         <div class="card-actions">
-          <button class="button primary" type="button" data-car-id="${vehicle.id}">View Details</button>
+          <a class="button primary" href="details.html?id=${vehicle.id}">View Details</a>
           <a class="button secondary" href="#finance">Estimate</a>
         </div>
       </div>
@@ -30,16 +30,21 @@ function vehicleCard(vehicle) {
 
 function renderVehicles() {
   const query = searchInput.value.trim().toLowerCase();
+  const selectedMake = makeFilter.value;
   const selectedType = typeFilter.value;
-  const selectedPrice = priceFilter.value;
+  const selectedYear = yearFilter.value;
+  const minPrice = Number(minPriceFilter.value) || 0;
+  const maxPrice = Number(maxPriceFilter.value) || Infinity;
 
   const filtered = vehicles.filter((vehicle) => {
-    const searchText = `${vehicle.make} ${vehicle.model} ${vehicle.type} ${vehicle.fuel}`.toLowerCase();
+    const searchText = `${vehicle.make} ${vehicle.model} ${vehicle.year} ${vehicle.price}`.toLowerCase();
     const matchesSearch = !query || searchText.includes(query);
+    const matchesMake = selectedMake === "all" || vehicle.make === selectedMake;
     const matchesType = selectedType === "all" || vehicle.type === selectedType;
-    const matchesPrice = selectedPrice === "all" || vehicle.price <= Number(selectedPrice);
+    const matchesYear = selectedYear === "all" || vehicle.year === Number(selectedYear);
+    const matchesPrice = vehicle.price >= minPrice && vehicle.price <= maxPrice;
 
-    return matchesSearch && matchesType && matchesPrice;
+    return matchesSearch && matchesMake && matchesType && matchesYear && matchesPrice;
   });
 
   inventoryGrid.innerHTML = filtered.map(vehicleCard).join("");
@@ -47,51 +52,21 @@ function renderVehicles() {
 }
 
 function openCarDetails(carId) {
-  const vehicle = vehicles.find((car) => car.id === carId);
-
-  if (!vehicle) {
-    return;
-  }
-
-  modalImage.src = vehicle.image;
-  modalImage.alt = `${vehicle.year} ${vehicle.make} ${vehicle.model}`;
-  modalType.textContent = vehicle.type;
-  modalTitle.textContent = `${vehicle.year} ${vehicle.make} ${vehicle.model}`;
-  modalPrice.textContent = money.format(vehicle.price);
-  modalDescription.textContent = vehicle.description;
-  modalSpecs.innerHTML = `
-    <div><dt>Mileage</dt><dd>${vehicle.mileage}</dd></div>
-    <div><dt>Fuel</dt><dd>${vehicle.fuel}</dd></div>
-    <div><dt>Transmission</dt><dd>${vehicle.transmission}</dd></div>
-    <div><dt>Engine</dt><dd>${vehicle.engine}</dd></div>
-    <div><dt>Color</dt><dd>${vehicle.color}</dd></div>
-    <div><dt>Seats</dt><dd>${vehicle.seats}</dd></div>
-  `;
-  modalFeatures.innerHTML = vehicle.features.map((feature) => `<span>${feature}</span>`).join("");
-
-  carModal.classList.add("open");
-  carModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-}
-
-function closeCarDetails() {
-  carModal.classList.remove("open");
-  carModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
+  window.location.href = `details.html?id=${carId}`;
 }
 
 function setupInventoryFilters() {
-  [searchInput, typeFilter, priceFilter].forEach((field) => {
+  [searchInput, makeFilter, typeFilter, yearFilter, minPriceFilter, maxPriceFilter].forEach((field) => {
     field.addEventListener("input", renderVehicles);
   });
 }
 
 function setupCarDetails() {
   inventoryGrid.addEventListener("click", (event) => {
-    const estimateLink = event.target.closest('a[href="#finance"]');
+    const actionLink = event.target.closest("a");
     const card = event.target.closest("[data-car-id]");
 
-    if (estimateLink || !card) {
+    if (actionLink || !card) {
       return;
     }
 
@@ -106,18 +81,6 @@ function setupCarDetails() {
     const card = event.target.closest(".vehicle-card");
     if (card) {
       openCarDetails(card.dataset.carId);
-    }
-  });
-
-  carModal.addEventListener("click", (event) => {
-    if (event.target.closest("[data-close-modal]")) {
-      closeCarDetails();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && carModal.classList.contains("open")) {
-      closeCarDetails();
     }
   });
 }
