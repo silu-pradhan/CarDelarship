@@ -3,7 +3,7 @@ const selectedId = params.get("id");
 const selectedVehicle = vehicles.find((vehicle) => vehicle.id === selectedId) || vehicles[0];
 
 const detailsMainImage = document.querySelector("#detailsMainImage");
-const detailsThumbs = document.querySelector("#detailsThumbs");
+
 const detailsType = document.querySelector("#detailsType");
 const detailsTitle = document.querySelector("#detailsTitle");
 const detailsPrice = document.querySelector("#detailsPrice");
@@ -19,11 +19,7 @@ function renderDetailsPage(vehicle) {
   detailsPrice.textContent = money.format(vehicle.price);
   detailsDescription.textContent = vehicle.description;
 
-  detailsThumbs.innerHTML = vehicle.gallery.map((image, index) => `
-    <button class="thumb-button ${index === 0 ? "active" : ""}" type="button" data-image="${image}">
-      <img src="${image}" alt="${vehicle.make} ${vehicle.model} image ${index + 1}">
-    </button>
-  `).join("");
+
 
   detailsSpecs.innerHTML = `
     <div><dt>Make</dt><dd>${vehicle.make}</dd></div>
@@ -41,16 +37,6 @@ function renderDetailsPage(vehicle) {
   detailsFeatures.innerHTML = vehicle.features.map((feature) => `<span>${feature}</span>`).join("");
 }
 
-detailsThumbs.addEventListener("click", (event) => {
-  const button = event.target.closest(".thumb-button");
 
-  if (!button) {
-    return;
-  }
-
-  detailsMainImage.src = button.dataset.image;
-  document.querySelectorAll(".thumb-button").forEach((thumb) => thumb.classList.remove("active"));
-  button.classList.add("active");
-});
 
 renderDetailsPage(selectedVehicle);

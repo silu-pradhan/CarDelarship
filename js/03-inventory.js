@@ -62,11 +62,7 @@ function openCarDetails(carId) {
   window.location.href = `details.html?id=${carId}`;
 }
 
-function updateCompareBar() {
-  compareCount.textContent = selectedCompareIds.size;
-  compareBar.hidden = selectedCompareIds.size === 0;
-  openCompareButton.disabled = selectedCompareIds.size < 2;
-}
+
 
 function toggleCompare(carId) {
   if (selectedCompareIds.has(carId)) {
@@ -76,7 +72,10 @@ function toggleCompare(carId) {
   }
 
   renderVehicles();
-  updateCompareBar();
+  
+  if (selectedCompareIds.size >= 2) {
+    openCompareModal();
+  }
 }
 
 function compareCell(label, values) {
@@ -135,13 +134,12 @@ function closeCompareModal() {
   compareModal.classList.remove("open");
   compareModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+  clearComparison();
 }
 
 function clearComparison() {
   selectedCompareIds.clear();
   renderVehicles();
-  updateCompareBar();
-  closeCompareModal();
 }
 
 function setupInventoryFilters() {
@@ -181,9 +179,6 @@ function setupCarDetails() {
 }
 
 function setupComparison() {
-  openCompareButton.addEventListener("click", openCompareModal);
-  clearCompareButton.addEventListener("click", clearComparison);
-
   compareModal.addEventListener("click", (event) => {
     if (event.target.closest("[data-close-compare]")) {
       closeCompareModal();
@@ -195,6 +190,4 @@ function setupComparison() {
       closeCompareModal();
     }
   });
-
-  updateCompareBar();
 }
