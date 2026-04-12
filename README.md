@@ -39,6 +39,7 @@ car-delarship/
 - Professional homepage with full-width automotive hero image
 - Automatic homepage car image slideshow
 - Featured vehicle inventory
+- Clickable car cards with full vehicle details
 - Search, type filter, and max-price filter
 - Finance payment estimator
 - Services section

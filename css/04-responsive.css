@@ -1,3 +1,24 @@
+@media (max-width: 1180px) {
+  .inventory-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .inventory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .modal-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-panel > img {
+    min-height: 300px;
+    max-height: 360px;
+  }
+}
+
 @media (max-width: 860px) {
   .nav {
     min-height: 66px;
@@ -86,11 +107,43 @@
     padding: 16px;
   }
 
+  .vehicle-image-wrap img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .vehicle-body {
+    padding: 16px;
+  }
+
   .vehicle-top {
     display: grid;
+    gap: 4px;
   }
 
   .price {
     white-space: normal;
+  }
+
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    padding: 22px;
+  }
+
+  .modal-panel > img {
+    min-height: 230px;
+    max-height: 260px;
+  }
+
+  .detail-grid,
+  .modal-actions {
+    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
