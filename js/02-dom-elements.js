@@ -1,11 +1,7 @@
 const inventoryGrid = document.querySelector("#inventoryGrid");
 const emptyState = document.querySelector("#emptyState");
 const searchInput = document.querySelector("#searchInput");
-const makeFilter = document.querySelector("#makeFilter");
-const typeFilter = document.querySelector("#typeFilter");
-const yearFilter = document.querySelector("#yearFilter");
-const minPriceFilter = document.querySelector("#minPriceFilter");
-const maxPriceFilter = document.querySelector("#maxPriceFilter");
+
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector("#navLinks");
 const financeForm = document.querySelector("#financeForm");

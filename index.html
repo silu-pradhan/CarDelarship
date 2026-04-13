@@ -20,9 +20,9 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Prime Autohaus home">
-        <span class="brand-mark">PA</span>
-        <span>Prime Autohaus</span>
+      <a class="brand" href="#home" aria-label="Santanu Garage home">
+        <span class="brand-mark">SG</span>
+        <span>Santanu Garage </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
         <span></span>
@@ -32,7 +32,6 @@
       <div class="nav-links" id="navLinks">
         <a href="#search">Search</a>
         <a href="#inventory">Car Listings</a>
-        <a href="#about">About Us</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </div>
@@ -64,78 +63,15 @@
     </section>
 
     <section class="quick-search" id="search" aria-label="Quick vehicle search">
-      <div class="search-panel">
+      <div class="search-panel" style="grid-template-columns: 1fr;">
         <label>
           <span>Search</span>
           <input id="searchInput" type="search" placeholder="Make, model, year, or price">
         </label>
-        <label>
-          <span>Make</span>
-          <select id="makeFilter">
-            <option value="all">All makes</option>
-            <option value="BMW">BMW</option>
-            <option value="Ford">Ford</option>
-            <option value="Honda">Honda</option>
-            <option value="Hyundai">Hyundai</option>
-            <option value="Mercedes-Benz">Mercedes-Benz</option>
-            <option value="Porsche">Porsche</option>
-            <option value="Tesla">Tesla</option>
-            <option value="Toyota">Toyota</option>
-          </select>
-        </label>
-        <label>
-          <span>Type</span>
-          <select id="typeFilter">
-            <option value="all">All types</option>
-            <option value="Sedan">Sedan</option>
-            <option value="SUV">SUV</option>
-            <option value="Electric">Electric</option>
-            <option value="Hatchback">Hatchback</option>
-            <option value="Coupe">Coupe</option>
-          </select>
-        </label>
-        <label>
-          <span>Year</span>
-          <select id="yearFilter">
-            <option value="all">Any year</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-          </select>
-        </label>
-        <label>
-          <span>Min price</span>
-          <input id="minPriceFilter" type="number" min="0" step="1000" placeholder="$0">
-        </label>
-        <label>
-          <span>Max price</span>
-          <input id="maxPriceFilter" type="number" min="0" step="1000" placeholder="$70,000">
-        </label>
       </div>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">About us</p>
-        <h2>A cleaner way to choose your next car</h2>
-        <p>Prime Autohaus focuses on inspected vehicles, transparent pricing, practical financing support, and helpful test-drive guidance.</p>
-      </div>
-      <div class="about-grid">
-        <article>
-          <strong>120+</strong>
-          <span>cars inspected monthly</span>
-        </article>
-        <article>
-          <strong>4.8/5</strong>
-          <span>average customer rating</span>
-        </article>
-        <article>
-          <strong>7 days</strong>
-          <span>purchase support window</span>
-        </article>
-      </div>
-    </section>
+
 
     <section class="section" id="inventory">
       <div class="section-heading">
@@ -195,7 +131,7 @@
           </select>
         </label>
         <button class="button primary" type="submit">Calculate</button>
-        <output id="paymentResult">Estimated monthly payment: $440</output>
+        <output id="paymentResult">Estimated monthly payment: ₹440</output>
       </form>
     </section>
 
@@ -203,7 +139,7 @@
       <div class="testimonial-copy">
         <p class="eyebrow">Customer note</p>
         <h2>"Clear price, clean paperwork, and the test drive was booked in minutes."</h2>
-        <p>Riya Sharma, Prime Autohaus customer</p>
+        <p>Santanu Pradhan, Happy Customer</p>
       </div>
       <img src="assets/images/showroom-car.jpg" alt="Silver sports car parked on a road">
     </section>

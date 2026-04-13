@@ -37,21 +37,12 @@ function vehicleCard(vehicle) {
 
 function renderVehicles() {
   const query = searchInput.value.trim().toLowerCase();
-  const selectedMake = makeFilter.value;
-  const selectedType = typeFilter.value;
-  const selectedYear = yearFilter.value;
-  const minPrice = Number(minPriceFilter.value) || 0;
-  const maxPrice = Number(maxPriceFilter.value) || Infinity;
 
   const filtered = vehicles.filter((vehicle) => {
     const searchText = `${vehicle.make} ${vehicle.model} ${vehicle.year} ${vehicle.price}`.toLowerCase();
     const matchesSearch = !query || searchText.includes(query);
-    const matchesMake = selectedMake === "all" || vehicle.make === selectedMake;
-    const matchesType = selectedType === "all" || vehicle.type === selectedType;
-    const matchesYear = selectedYear === "all" || vehicle.year === Number(selectedYear);
-    const matchesPrice = vehicle.price >= minPrice && vehicle.price <= maxPrice;
 
-    return matchesSearch && matchesMake && matchesType && matchesYear && matchesPrice;
+    return matchesSearch;
   });
 
   inventoryGrid.innerHTML = filtered.map(vehicleCard).join("");
@@ -143,9 +134,7 @@ function clearComparison() {
 }
 
 function setupInventoryFilters() {
-  [searchInput, makeFilter, typeFilter, yearFilter, minPriceFilter, maxPriceFilter].forEach((field) => {
-    field.addEventListener("input", renderVehicles);
-  });
+  searchInput.addEventListener("input", renderVehicles);
 }
 
 function setupCarDetails() {
