@@ -13,7 +13,9 @@ function setupContactForm() {
     
     // Show success modal
     const successModal = document.getElementById("successModal");
+    successModal.classList.add("open");
     successModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
     
     // Reset form
     contactForm.reset();
@@ -34,4 +36,7 @@ function setupContactForm() {
 
 function closeSuccessModal() {
   const successModal = document.getElementById("successModal");
+  successModal.classList.remove("open");
   successModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
