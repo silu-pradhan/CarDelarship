@@ -62,8 +62,15 @@ car-delarship/
 - Finance payment estimator
 - Services section
 - Customer note section
-- Test drive contact form
+- Test drive contact form with clean success popup notification
 - Responsive navigation for mobile screens
+
+## Contact Form Features
+
+- Collects user details: name, email, vehicle interest, and message
+- Shows a clean, modern success popup after submission (auto-closes after 4 seconds)
+- Non-intrusive UI with centered modal and close button
+- No external redirects or alerts
 
 ## How to Run
 

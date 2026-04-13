@@ -7,11 +7,31 @@ function setupContactForm() {
     const vehicle = formData.get("vehicle");
     const message = formData.get("message");
     
-    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AVehicle Interest: ${vehicle}%0D%0AMessage:%0D%0A${message}`;
-    window.location.href = `mailto:santanupradhan599@gmail.com?subject=Test Drive Request&body=${body}`;
+    // Here you can send the data to a backend service
+    // For now, we'll just show the success modal
+    console.log("Contact form submitted:", { name, email, vehicle, message });
     
+    // Show success modal
+    const successModal = document.getElementById("successModal");
+    successModal.setAttribute("aria-hidden", "false");
+    
+    // Reset form
     contactForm.reset();
     formNote.textContent = "";
-    alert("Message sent successfully!");
+    
+    // Close modal after 4 seconds
+    setTimeout(() => {
+      closeSuccessModal();
+    }, 4000);
+  });
+  
+  // Setup close button listeners
+  const closeButtons = document.querySelectorAll("[data-close-success]");
+  closeButtons.forEach(button => {
+    button.addEventListener("click", closeSuccessModal);
   });
 }
+
+function closeSuccessModal() {
+  const successModal = document.getElementById("successModal");
+  successModal.setAttribute("aria-hidden", "true");
